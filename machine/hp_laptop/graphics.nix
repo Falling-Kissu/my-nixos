@@ -23,7 +23,7 @@
     # A wrapper that allows VDPAU-only apps (like older Flash or players) to use VA-API/OpenGL
     # libvdpau-va-gl
 
-    # OpenCL support; "-legacy1" supports pre-12th gen
+    # OpenCL support; "-legacy1" supports pre-12th gen: remove it if not
     intel-compute-runtime-legacy1
   ];
 

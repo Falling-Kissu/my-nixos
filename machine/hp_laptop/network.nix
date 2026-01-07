@@ -1,9 +1,10 @@
 { lib, config, ... }:
 {
-  # Only enable it when using usb-throttling otherwise systemd will make you 90 seconds extra while booting
+  # Only enable it when using usb-throttling otherwise systemd will make you wait 90 seconds extra
+  # if usb isn't already plugged in during boot
   # networking.interfaces.enp0s20f0u1.mtu = 1400;
 
-  # Enable TCP BBR (The "Jio Stability" tweak)
+  # fixes for the ISP(Jio) I use; you probably don't need it?
   boot.kernel.sysctl = {
     "net.core.default_qdisc" = "fq";
     "net.ipv4.tcp_congestion_control" = "bbr";
@@ -18,5 +19,5 @@
         type filter hook postrouting priority mangle; policy accept;
         counter ip ttl set 65
         }
-      }'';
+    }'';
 }

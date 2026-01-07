@@ -10,7 +10,6 @@
 }:
 
 {
-
   ################################
   #            BOOT              #
   ################################
@@ -49,7 +48,7 @@
     ];
   };
 
-  # It is necessary due to some intel drivers(see GPU) and Intel Microcode
+  # IMPORTANT: It is necessary due to some intel drivers(see GPU) and Intel Microcode
   nixpkgs.config.allowUnfree = true;
 
   ################################
@@ -61,35 +60,24 @@
     ./hardware-configuration.nix
 
     ./machine/hp_laptop.nix
+
+    ./modules/system_packages.nix
+    ./modules/user_packages.nix
+
     ./modules/games.nix
     ./modules/chromium.nix
-
   ];
 
   ################################
   #          DISPLAY             #
   ################################
 
-  # Auto-login without asking password prompt
-  # programs.hyprland.enable = true;
-
   services = {
-    #displayManager = {
-    #  lightdm.enable = true;
-    #  defaultSession = "none+i3";
-    #  autoLogin = {
-    #    enable = true;
-    #    user = "kissu";
-    #  };
-    #};
-
-    # Enable the X11 windowing system and i3
     xserver = {
       enable = true;
       xkb = {
         layout = "us";
         options = "caps:ctrl_shifted_capslock";
-        # options = "ctrl:swap_lalt_lctl,caps:ctrl_shifted_capslock";
       };
       windowManager.i3.enable = true;
       videoDrivers = [ "modesetting" ];
@@ -97,160 +85,21 @@
   };
 
   # Wayland and niri
+<<<<<<< HEAD
+  programs.sway.enable = true;
   programs.niri.enable = true;
+  programs.hyprland.enable = true;
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+=======
+  # programs.niri.enable = true;
+  # programs.hyprland.enable = true;
   services.displayManager.sddm = {
     enable = true;
     # wayland.enable = true;
-  };
-
-  ################################
-  #        USERS & GROUPS        #
-  ################################
-
-  # i3lock
-  security.pam.services.i3lock = { };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kissu = {
-    isNormalUser = true;
-    home = "/home/kissu";
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-    ];
-
-    packages = with pkgs; [
-      bear
-      emacs
-      zed-editor
-
-      # wayland
-      # fuzzel
-      # waybar
-      # swaybg
-      # mako
-      # swaylock
-      # xwayland
-
-      # x
-      rofi
-      picom
-      yazi
-
-      #
-      cmake
-      clang-tools
-      llvmPackages.lldb
-      llvmPackages.clang
-
-      # nix
-      nil
-      nixfmt-rfc-style
-
-      # spell
-      (aspellWithDicts (
-        dicts: with dicts; [
-          en
-          en-computers
-          en-science
-        ]
-      ))
-
-      # desktop - interface
-      kitty
-      dunst
-      libnotify
-      flameshot
-      i3lock-color
-      xclip
-      xss-lock
-
-      # monitor/view
-      btop
-      activitywatch
-      dex
-      bat
-      dust
-      ouch
-
-      # media
-      mpv
-      feh
-      nomacs
-      libjxl
-      ffmpeg_7-full
-      pavucontrol
-
-      # documents
-      evince
-      mupdf
-
-      # download
-      aria2
-      deno # for yt-dlp
-      yt-dlp
-      gallery-dl
-
-      # theming
-      fontpreview
-      lxappearance
-      libsForQt5.qt5ct
-      qt6Packages.qt6ct
-    ];
-  };
-
-  ################################
-  #      SYSTEM_PACKAGES         #
-  ################################
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-    nix-direnv.enable = true;
-  };
-
-  environment.systemPackages = with pkgs; [
-    git
-    stow
-    vim
-
-    # disk
-    smartmontools
-    gsmartcontrol
-
-    # Cli
-    coreutils
-    dos2unix
-    fd
-    fzf
-    ripgrep
-    trash-cli
-    tldr
-    tree
-    xdg-utils
-
-    # gpu stuff
-    libva-utils
-    mesa-demos
-    acpi
-    brightnessctl
-    lm_sensors
-  ];
-
-  programs.firefox.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "*";
-  };
-
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+>>>>>>> 0802d98 (refactoring:)
   };
 
   ################################
@@ -259,17 +108,8 @@
 
   networking.hostName = "nixos";
   networking.firewall.enable = true;
-
-  # nmtui
   networking.networkmanager.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.firewall.checkReversePath = false;
 
   ################################
   #             Misc             #
@@ -286,9 +126,7 @@
     useXkbConfig = true;
   };
 
-  # Caps -> esc
-  # services.xserver.xkb.options = "caps:escape";
-
+  # qt
   qt = {
     enable = true;
     platformTheme = "qt5ct";
@@ -332,5 +170,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

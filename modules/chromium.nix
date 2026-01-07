@@ -11,7 +11,7 @@ in
     extraOpts = {
       # --- Fonts ---
       "StandardFontFamily" = font;
-      "FixedFontFamily" = font2;
+      "FixedFontFamily" = font;
       "SerifFontFamily" = font;
       "SansSerifFontFamily" = font;
 

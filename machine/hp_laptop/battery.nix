@@ -6,7 +6,7 @@
 }:
 
 {
-  # Power-Management for laptop
+  # Power-management for laptop
   powerManagement.enable = true;
   services = {
     power-profiles-daemon.enable = false;
@@ -43,7 +43,7 @@
         INTEL_GPU_MAX_FREQ_ON_BAT = 800; # Lower max GPU speed on battery
         INTEL_GPU_BOOST_FREQ_ON_BAT = 800;
 
-        # Optional: helps save long term battery health; not supported due to my Hp Laptop
+        # Optional: helps save long term battery health; not supported on my Hp Laptop
         # START_CHARGE_THRESH_BAT0 = 30; # 30 and below it starts to charge
         # STOP_CHARGE_THRESH_BAT0 = 80;  # 80 and above it stops charging
       };

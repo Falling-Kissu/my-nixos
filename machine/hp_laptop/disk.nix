@@ -1,10 +1,20 @@
-{ ... }:
+{
+  lib,
+  ...
+}:
 
 {
-  # decreasing pain for my HDD (in 2025)
+  # swap on disk is slow since HDD uhh, so I am using zram instead
+  swapDevices = lib.mkForce [ ];
+  zramSwap.enable = true;
+
+  # decreasing pain for my HDD(in 2025^tm)
   boot = {
     kernelModules = [ "bfq" ];
-    kernelParams = [ "elevator=bfq" ];
+    kernelParams = [
+      "elevator=bfq"
+      "systemd.swap=0"
+    ];
     kernel.sysctl = {
       "vm.swappiness" = 10;
     };
@@ -17,6 +27,7 @@
       "nodiratime"
     ];
   };
+
   # Encrypted partition: /dev/sda3: uuid-ee39a...
   systemd.tmpfiles.rules = [
     "d /home/vault 0700 kissu users -"
