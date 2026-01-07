@@ -44,6 +44,7 @@ in
       # --- Disable Internal Password Manager ---
       "PasswordManagerEnabled" = false;
       "OfferToSaveLogins" = false;
+
       # --- Disable Internal Autofill  ---
       "AutofillAddressEnabled" = false;
       "AutofillCreditCardEnabled" = false; # Prevents filling/saving cards

@@ -212,7 +212,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    lazygit
     git
     stow
     vim

@@ -1,5 +1,5 @@
 {
-  description = "NixOS Flake with Home Manager for HP Laptop";
+  description = "NixOS Flake for my HP Laptop";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
