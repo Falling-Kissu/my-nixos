@@ -80,6 +80,7 @@
 
       # media
       # kdePackages.kdenlive
+      pixieditor
       losslesscut-bin
       mpv
       mpd
