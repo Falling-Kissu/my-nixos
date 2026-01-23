@@ -21,21 +21,12 @@
       kdePackages.kate
 
       # wayland
-<<<<<<< HEAD
-      fuzzel
-      waybar
-      swaybg
-      mako
-      swaylock
-      xwayland
-=======
       # fuzzel
       # waybar
       # swaybg
       # mako
       # swaylock
       # xwayland
->>>>>>> 0802d98 (refactoring:)
 
       # x
       rofi

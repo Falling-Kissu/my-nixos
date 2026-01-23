@@ -85,21 +85,15 @@
   };
 
   # Wayland and niri
-<<<<<<< HEAD
   programs.sway.enable = true;
   programs.niri.enable = true;
   programs.hyprland.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-=======
   # programs.niri.enable = true;
   # programs.hyprland.enable = true;
   services.displayManager.sddm = {
     enable = true;
     # wayland.enable = true;
->>>>>>> 0802d98 (refactoring:)
   };
 
   ################################
