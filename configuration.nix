@@ -60,6 +60,8 @@
     ./hardware-configuration.nix
 
     ./machine/hp_laptop.nix
+    ./machine/display/x.nix
+    ./machine/display/wayland.nix
 
     ./modules/system_packages.nix
     ./modules/user_packages.nix
@@ -69,32 +71,10 @@
   ];
 
   ################################
-  #          DISPLAY             #
+  #      DISPLAY MANAGER         #
   ################################
 
-  services = {
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        options = "caps:ctrl_shifted_capslock";
-      };
-      windowManager.i3.enable = true;
-      videoDrivers = [ "modesetting" ];
-    };
-  };
-
-  # Wayland and niri
-  programs.sway.enable = true;
-  programs.niri.enable = true;
-  programs.hyprland.enable = true;
-
-  # programs.niri.enable = true;
-  # programs.hyprland.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    # wayland.enable = true;
-  };
+  services.displayManager.sddm.enable = true;
 
   ################################
   #    Networking & Firewall     #

@@ -43,6 +43,7 @@
 
     # Wayland
     NIXOS_OZONE_WL = "1";
+    XDG_SESSION_TYPE = "wayland";
     GDK_BACKEND = "wayland,x11";
     QT_QPA_PLATFORM = "wayland;xcb";
     _JAVA_AWT_WM_NONREPARENTING = "1";

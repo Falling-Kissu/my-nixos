@@ -20,23 +20,21 @@
       emacs
       kdePackages.kate
 
-      # wayland
-      # fuzzel
-      # waybar
-      # swaybg
-      # mako
-      # swaylock
-      # xwayland
-
       # x
-      rofi
+      dunst
+      flameshot
+      i3lock-color
+      libnotify
       picom
+      rofi
+      xclip
+      xss-lock
 
       #
-      cmake
       clang-tools
-      llvmPackages.lldb
+      cmake
       llvmPackages.clang
+      llvmPackages.lldb
 
       # nix
       nil
@@ -51,52 +49,46 @@
         ]
       ))
 
-      # gui related stuff
-      dunst
-      libnotify
-      flameshot
-      i3lock-color
-      xclip
-      xss-lock
-
       # cmdline-stuff
-      kitty
+      bat
       btop
       dex
-      bat
       dust
+      fdupes
+      kitty
       ouch
       yazi
-      fdupes
 
       # media
-      # kdePackages.kdenlive
-      pixieditor
-      losslesscut-bin
-      mpv
-      mpd
-      rmpc
       feh
-      nomacs
-      libjxl
       ffmpeg_7-full
+      libjxl
+      mpd
+      mpv
+      nomacs
       pavucontrol
+      rmpc
+
+      # editor
+      # kdePackages.kdenlive
+      losslesscut-bin
+      pixieditor
 
       # documents
-      foliate
       evince
+      foliate
       mupdf
 
       # download
       aria2
       deno # for yt-dlp
-      yt-dlp
       gallery-dl
+      yt-dlp
 
       # theming
       fontpreview
-      lxappearance
       libsForQt5.qt5ct
+      lxappearance
       qt6Packages.qt6ct
     ];
   };
