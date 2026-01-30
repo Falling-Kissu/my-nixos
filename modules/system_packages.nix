@@ -3,6 +3,9 @@
   ################################
   #      SYSTEM_PACKAGES         #
   ################################
+  imports = [
+    ./activity_watcher.nix
+  ];
 
   programs.direnv = {
     enable = true;
