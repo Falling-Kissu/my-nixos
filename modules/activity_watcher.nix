@@ -19,7 +19,10 @@
   # running awatcher as a service too
   systemd.user.services.awatcher = {
     description = "ActivityWatch Wayland Watcher";
-    after = [ "activitywatch.service" ];
+    after = [
+      "activitywatch.service"
+      "wayland-session.target"
+    ];
     wantedBy = [ "graphical-session.target" ];
     serviceConfig = {
       ExecStart = "${pkgs.awatcher}/bin/awatcher";
