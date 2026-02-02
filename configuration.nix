@@ -24,7 +24,7 @@
     };
 
     # I don't need latest kernel
-    kernelPackages = pkgs.linuxPackages_6_12;
+    kernelPackages = pkgs.linuxPackages_6_18;
 
     # hides "Errors" and "Info" but keeps "Critical" and "Alerts"
     consoleLogLevel = 3;
@@ -65,9 +65,6 @@
 
     ./modules/system_packages.nix
     ./modules/user_packages.nix
-
-    ./modules/games.nix
-    ./modules/chromium.nix
   ];
 
   ################################

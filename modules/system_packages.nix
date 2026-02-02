@@ -4,7 +4,8 @@
   #      SYSTEM_PACKAGES         #
   ################################
   imports = [
-    ./activity_watcher.nix
+    ./modules/games.nix
+    ./modules/chromium.nix
   ];
 
   programs.direnv = {
