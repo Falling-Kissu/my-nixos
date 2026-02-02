@@ -24,7 +24,7 @@
     };
 
     # I don't need latest kernel
-    kernelPackages = pkgs.linuxPackages_6_18;
+    kernelPackages = pkgs.linuxPackages_lts;
 
     # hides "Errors" and "Info" but keeps "Critical" and "Alerts"
     consoleLogLevel = 3;

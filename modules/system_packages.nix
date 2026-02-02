@@ -4,8 +4,8 @@
   #      SYSTEM_PACKAGES         #
   ################################
   imports = [
-    ./modules/games.nix
-    ./modules/chromium.nix
+    ./games.nix
+    ./chromium.nix
   ];
 
   programs.direnv = {
