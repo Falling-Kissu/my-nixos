@@ -6,14 +6,16 @@
   programs.niri.enable = true;
 
   environment.systemPackages = with pkgs; [
-    fuzzel
-    grim
-    mako
-    slurp
     swappy
     swaybg
     swayidle
     swaylock-effects
+    swaynotificationcenter
+
+    fuzzel
+    grim
+    mako
+    slurp
     waybar
     wl-clipboard
     xwayland

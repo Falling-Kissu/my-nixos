@@ -4,6 +4,12 @@
     # Fixes a common HP bug where 'intel_vbtn' sends ghost "tablet-mode" events
     # which can disable the touchpad or keyboard in i3.
     blacklistedKernelModules = [ "intel_vbtn" ];
+
+    # Fix shutdown on my laptop
+    kernelParams = [
+      "acpi=force"
+      "reboot=pci"
+    ];
   };
 
   # no

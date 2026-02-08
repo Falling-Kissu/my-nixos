@@ -14,6 +14,8 @@
     tlp = {
       enable = true;
       settings = {
+        WOL_DISABLE = "Y";
+
         TLP_PERSISTENT_DEFAULT = 0;
         TLP_DEFAULT_MODE = "AC";
 
