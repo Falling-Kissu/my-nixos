@@ -6,7 +6,6 @@ in
 {
   imports = [
     (hp "laptop")
-    (hp "fonts")
     (hp "disk")
     (hp "graphics")
     (hp "sound")
