@@ -1,5 +1,6 @@
 My nixos configuration.
 
+- Switch to home-manager(without flakes) for some programs
 ---
 
 Super: flag/logo key
