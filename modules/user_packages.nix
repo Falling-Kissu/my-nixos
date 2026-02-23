@@ -20,6 +20,9 @@
       emacs
       kdePackages.kate
 
+      #
+      anki-bin
+
       # x
       dunst
       flameshot
