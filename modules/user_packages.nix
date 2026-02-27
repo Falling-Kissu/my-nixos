@@ -75,7 +75,6 @@
       # editor
       # kdePackages.kdenlive
       losslesscut-bin
-      pixieditor
 
       # documents
       evince
