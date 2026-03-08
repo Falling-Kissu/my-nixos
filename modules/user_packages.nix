@@ -18,6 +18,7 @@
     packages = with pkgs; [
       bear
       emacs
+      emacsPackages.pdf-tools
       kdePackages.kate
 
       #
@@ -82,6 +83,7 @@
       mupdf
 
       # download
+      syncthing
       aria2
       deno # for yt-dlp
       gallery-dl
