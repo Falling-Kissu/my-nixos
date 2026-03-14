@@ -4,7 +4,7 @@
   #      SYSTEM_PACKAGES         #
   ################################
   imports = [
-    ./games.nix
+    # ./games.nix
     ./chromium.nix
   ];
 
