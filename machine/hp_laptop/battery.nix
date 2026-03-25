@@ -47,8 +47,8 @@
         INTEL_GPU_BOOST_FREQ_ON_BAT = 800;
 
         # Optional: helps save long term battery health; not supported on my Hp Laptop
-        START_CHARGE_THRESH_BAT0 = 40; # 30 and below it starts to charge
-        STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+        # START_CHARGE_THRESH_BAT0 = 40; # 30 and below it starts to charge
+        # STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
       };
     };
   };
