@@ -6,10 +6,10 @@
     blacklistedKernelModules = [ "intel_vbtn" ];
 
     # Fix shutdown on my laptop
-    kernelParams = [
-      "acpi=force"
-      "reboot=pci"
-    ];
+    #   kernelParams = [
+    #     "acpi=force"
+    #     "reboot=pci"
+    #   ];
   };
 
   # no
