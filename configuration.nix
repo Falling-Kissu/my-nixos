@@ -66,6 +66,7 @@
     ./modules/system_packages.nix
     ./modules/user_packages.nix
     ./modules/fonts.nix
+    ./modules/hindi.nix
   ];
 
   ################################
