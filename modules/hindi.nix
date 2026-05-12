@@ -17,8 +17,8 @@
 
     # Note: On modern Sway, native Wayland text-input protocols handle GTK/Qt.
     # Only uncomment these below if specific apps refuse to switch to Hindi:
-    # GTK_IM_MODULE = "fcitx";
-    # QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
   };
 
   fonts.packages = with pkgs; [
