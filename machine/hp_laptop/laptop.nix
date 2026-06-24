@@ -1,10 +1,15 @@
 { ... }:
 {
+  hardware.enableRedistributableFirmware = true;
+
   boot = {
     # Fixes a common HP bug where 'intel_vbtn' sends ghost "tablet-mode" events
     # which can disable the touchpad or keyboard in i3.
     blacklistedKernelModules = [ "intel_vbtn" ];
 
+    extraModprobeConfig = ''
+      options rtw88_872de disable_lps_deep=y disable_aspm=y
+    '';
     # Fix shutdown on my laptop
     #   kernelParams = [
     #     "acpi=force"

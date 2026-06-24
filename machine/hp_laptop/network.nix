@@ -12,6 +12,8 @@
     "net.ipv6.conf.all.hop_limit" = 65;
   };
 
+  networking.wireless.iwd.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
   networking.nftables.enable = true;
   networking.nftables.ruleset = ''
     table ip mangle {
