@@ -67,11 +67,13 @@
       feh
       ffmpeg_7-full
       libjxl
-      mpd
       mpv
       nomacs
       pavucontrol
       rmpc
+      mpc
+      mpd
+      r128gain
 
       # editor
       # kdePackages.kdenlive
